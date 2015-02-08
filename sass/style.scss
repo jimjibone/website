@@ -1,0 +1,54 @@
+@import "bourbon";
+@import "neat";
+
+$background-colour: #fff;
+$font-colour: #000;
+$main-font-stack: "Helvetica Neue", Helvetica, sans-serif;
+
+@import "typography";
+
+$mobile: new-breakpoint(max-width 650px 4);
+
+header {
+    @include outer-container;
+    .title {
+        @include span-columns(3);
+        @include media($mobile) {
+            @include span-columns(4);
+        }
+    }
+    .nav {
+        @include span-columns(9);
+        @include media($mobile) {
+            @include span-columns(4);
+        }
+    }
+}
+
+section {
+    @include outer-container;
+    aside {
+        @include span-columns(3);
+        @include media($mobile) {
+            @include span-columns(4);
+        }
+    }
+    article {
+        @include span-columns(9);
+        @include media($mobile) {
+            @include span-columns(4);
+        }
+    }
+}
+
+footer {
+    @include outer-container;
+    .about {
+        @include span-columns(8);
+        @include shift(2);
+        @include media($mobile) {
+            @include span-columns(4);
+            @include shift(0);
+        }
+    }
+}

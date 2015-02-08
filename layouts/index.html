@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A site for James Reuss and his things.">
+
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="title">
+            <h1>{{ .Site.Title }}</h1>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Bed</a>
+        </div>
+    </header>
+
+    {{ range .Data.Pages }}
+    <section>
+        <aside>
+            <p><a href="{{ .Permalink }}">{{ .Title }}</a> {{ .Date.Format "02 Jan 2006, 15:04" }}</p>
+            {{ with .Params.author }}
+                By <strong class="author">{{ . }}</strong>
+            {{ end }}
+            {{ if isset .Params "categories" }}
+                under
+                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+            {{ end }}
+        </aside>
+        <article>
+            <div class="summary">
+                <p>{{ .Summary }}</p>
+            </div>
+            {{ if .Truncated }}
+            <div class="more"><a href="{{ .RelPermalink }}">Read more…</a></div>
+            {{ end }}
+        </article>
+    </section>
+    {{ end }} <!-- end range .Data.Pages -->
+
+    <footer>
+        <div class="about">
+            <p>I program in many flavours, but mostly in C and C++. You will occasionally find me using HTML, CSS and JavaScript, for things just like this site! But a recent favourite is Golang.</p>
+            <p>I am a software engineer living in the UK with a Masters of Engineering Degree from The University of Leicester.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

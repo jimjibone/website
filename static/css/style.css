@@ -1,0 +1,155 @@
+@import url(http://fonts.googleapis.com/css?family=Average|Raleway:400,500,300,200,100);
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem; }
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem; }
+
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem; }
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+
+strong {
+  color: #303030; }
+
+header {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  header .title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    header .title:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 650px)  {
+      header .title {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        header .title:last-child {
+          margin-right: 0; } }
+  header .nav {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    header .nav:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 650px)  {
+      header .nav {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        header .nav:last-child {
+          margin-right: 0; } }
+
+section {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  section:after {
+    content: "";
+    display: table;
+    clear: both; }
+  section aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    section aside:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 650px)  {
+      section aside {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        section aside:last-child {
+          margin-right: 0; } }
+  section article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    section article:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 650px)  {
+      section article {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        section article:last-child {
+          margin-right: 0; } }
+
+footer {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  footer:after {
+    content: "";
+    display: table;
+    clear: both; }
+  footer .about {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%; }
+    footer .about:last-child {
+      margin-right: 0; }
+    @media screen and (max-width: 650px)  {
+      footer .about {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%;
+        margin-left: 0%; }
+        footer .about:last-child {
+          margin-right: 0; } }

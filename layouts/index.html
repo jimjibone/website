@@ -24,13 +24,13 @@
     {{ range .Data.Pages }}
     <section>
         <aside>
-            <p><a href="{{ .Permalink }}">{{ .Title }}</a> {{ .Date.Format "02 Jan 2006, 15:04" }}</p>
-            {{ with .Params.author }}
-                By <strong class="author">{{ . }}</strong>
-            {{ end }}
+            <p>{{ .Date.Format "January 02, 2006" }}</p>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
             {{ if isset .Params "categories" }}
+            <p>
                 under
                 {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+            </p>
             {{ end }}
         </aside>
         <article>
@@ -46,8 +46,8 @@
 
     <footer>
         <div class="about">
-            <p>I program in many flavours, but mostly in C and C++. You will occasionally find me using HTML, CSS and JavaScript, for things just like this site! But a recent favourite is Golang.</p>
             <p>I am a software engineer living in the UK with a Masters of Engineering Degree from The University of Leicester.</p>
+            <p>I program in many flavours, but mostly in C and C++. You will occasionally find me using HTML, CSS and JavaScript, for things just like this site! But a recent favourite is Golang.</p>
         </div>
     </footer>
 

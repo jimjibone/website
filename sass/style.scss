@@ -27,10 +27,11 @@ body {
         }
     }
 
-    background-colour: $background-colour;
+    background-color: $background-colour;
+    margin: 20px;
 }
 
-header {
+.heading {
     @include outer-container;
     .title {
         @include span-columns(4);
@@ -57,7 +58,7 @@ section {
     padding-top: 5%;
     padding-bottom: 10%;
 
-    aside {
+    aside,.date,header {
         @include span-columns(12);
 
         text-transform: uppercase;
@@ -68,6 +69,10 @@ section {
             font-size: 2.5em;
             font-weight: 700;
             margin: 2% 0 2% 0;
+
+            @include media($mobile) {
+                font-size: 1.5em;
+            }
         }
 
         p {
@@ -83,8 +88,8 @@ section {
         }
     }
     article {
-        @include span-columns(8);
-        @include shift(2);
+        @include span-columns(10);
+        @include shift(1);
         @include media($mobile) {
             @include span-columns(4);
             @include shift(0);
@@ -92,6 +97,20 @@ section {
 
         font-size: 1.2em;
         padding-top: 5%;
+
+        .thumbnail {
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            background-color: $tint-colour;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: -20% auto;
+            }
+        }
 
         .summary {
             text-align: justify;

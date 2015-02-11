@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A site for James Reuss and his things.">
 
+    <base href="{{ .Site.BaseUrl }}">
     <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 
-    <header>
+    <div class="heading">
         <div class="title">
-            <h1>{{ .Site.Title }}</h1>
+            <h1><a href="{{ .Site.BaseUrl }}">{{ .Site.Title }}</a></h1>
         </div>
-        <div class="nav">
-            <a href="#">Home</a>
-            <a href="#">Bed</a>
-        </div>
-    </header>
+    </div>
 
     {{ range .Data.Pages }}
     <section>
-        <aside>
+        <div class="date">
             <p>{{ .Date.Format "January 02, 2006" }}</p>
+        </div>
+        <header>
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        </header>
+        <aside>
             {{ if isset .Params "categories" }}
             <p>
                 under
@@ -33,13 +36,19 @@
             </p>
             {{ end }}
         </aside>
+
         <article>
+            {{ if isset .Params "thumbnail" }}
+            <div class="thumbnail">
+                <img src="{{ .Params.thumbnail }}">
+            </div>
+            {{ end }}
             <div class="summary">
                 <p>{{ .Summary }}</p>
+                {{ if .Truncated }}
+                <a href="{{ .RelPermalink }}" class="more">Read more…</a>
+                {{ end }}
             </div>
-            {{ if .Truncated }}
-            <div class="more"><a href="{{ .RelPermalink }}">Read more…</a></div>
-            {{ end }}
         </article>
     </section>
     {{ end }} <!-- end range .Data.Pages -->

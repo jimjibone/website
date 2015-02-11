@@ -1,27 +1,55 @@
-{{ template "partials/top.html" . }}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A site for James Reuss and his things.">
 
-<div class="entries">
-    <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1>
-    <section class="post">
-        <header class="post-header">
+    <base href="{{ .Site.BaseUrl }}">
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
-            <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
 
-            <p class="post-meta">
-                {{ with .Params.author }}
-                    By <strong class="post-author">{{ . }}</strong>
-                {{ end }}
-                {{ if isset .Params "categories" }}
-                    under
-                    {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-                {{ end }}
-            </p>
+    <div class="heading">
+        <div class="title">
+            <h1><a href="{{ .Site.BaseUrl }}">{{ .Site.Title }}</a></h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="date">
+            <p>{{ .Date.Format "January 02, 2006" }}</p>
+        </div>
+
+        <header>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         </header>
 
-        <div class="post-description">
-            {{ .Content }}
-        </div>
+        <aside>
+            {{ if isset .Params "categories" }}
+            <p>
+                under
+                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+            </p>
+            {{ end }}
+        </aside>
+        <article>
+            <div class="content">
+                {{ .Content }}
+            </div>
+        </article>
     </section>
-</div>
 
-{{ template "partials/bottom.html" . }}
+    <footer>
+        <div class="about">
+            <p>I am a software engineer living in the UK with a Masters of Engineering Degree from The University of Leicester.</p>
+            <p>I program in many flavours, but mostly in C and C++. You will occasionally find me using HTML, CSS and JavaScript, for things just like this site! But a recent favourite is Golang.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

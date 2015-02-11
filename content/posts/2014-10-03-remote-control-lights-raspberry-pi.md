@@ -1,10 +1,10 @@
 +++
 date = "2014-10-03T21:45:13Z"
-draft = true
 title = "Remote Control Lights using a Raspberry Pi"
 categories = ["home automation"]
 tags = ["raspberry pi", "lightwave rf", "lighting", "home automation"]
 importance = 4
+thumbnail = "http://img.youtube.com/vi/UApxWZYKNRU/0.jpg"
 
 +++
 
@@ -16,7 +16,9 @@ I already had a 433 MHz transmitter/receiver pair working with the Arduino. I wa
 
 I plugged the 433 MHz transmitter into the Raspberry Pi's GPIO's, grabbed [lawrie's][lawrie] library, converted it to be Raspberry Pi friendly using [wiringPi][wiringPi] and created a simple C++ main function to spew out some messages every couple of seconds. This was really easy using wiringPi!
 
-Then I created this [video][video].
+Then I created this video.
+
+{{% youtube UApxWZYKNRU %}}
 
 The system seemed to work great! But it now needed the ability to receive messages too, for some unknown reason. So I attempted to use [lawrie's][lawrie] library again but it really failed for reasons that I forget... So I switched to using [roberttidey's][roberttidey] library for RX, made it Raspberry Pi friendly and it worked!
 

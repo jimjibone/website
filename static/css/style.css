@@ -205,7 +205,8 @@ html {
 body {
   font: 100% 'Average', Georgia, serif;
   color: #000;
-  background-colour: #fff; }
+  background-color: #fff;
+  margin: 20px; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
     text-transform: uppercase; }
@@ -215,46 +216,46 @@ body {
     body a:hover {
       color: #68b67e; }
 
-header {
+.heading {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
-  header:after {
+  .heading:after {
     content: "";
     display: table;
     clear: both; }
-  header .title {
+  .heading .title {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
     font-size: 1.2em; }
-    header .title:last-child {
+    .heading .title:last-child {
       margin-right: 0; }
     @media screen and (max-width: 650px)  {
-      header .title {
+      .heading .title {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        header .title:last-child {
+        .heading .title:last-child {
           margin-right: 0; } }
-  header .nav {
+  .heading .nav {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 65.88078%;
     text-transform: uppercase;
     font: 1em 'Raleway', 'Helvetica Neue', Helvetica, sans-serif; }
-    header .nav:last-child {
+    .heading .nav:last-child {
       margin-right: 0; }
     @media screen and (max-width: 650px)  {
-      header .nav {
+      .heading .nav {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        header .nav:last-child {
+        .heading .nav:last-child {
           margin-right: 0; } }
 
 section {
@@ -267,7 +268,7 @@ section {
     content: "";
     display: table;
     clear: both; }
-  section aside {
+  section aside, section .date, section header {
     float: left;
     display: block;
     margin-right: 2.35765%;
@@ -275,30 +276,33 @@ section {
     text-transform: uppercase;
     font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
     text-align: center; }
-    section aside:last-child {
+    section aside:last-child, section .date:last-child, section header:last-child {
       margin-right: 0; }
-    section aside h2 {
+    section aside h2, section .date h2, section header h2 {
       font-size: 2.5em;
       font-weight: 700;
       margin: 2% 0 2% 0; }
-    section aside p {
+      @media screen and (max-width: 650px)  {
+        section aside h2, section .date h2, section header h2 {
+          font-size: 1.5em; } }
+    section aside p, section .date p, section header p {
       font-size: 0.8em;
       font-weight: 600;
       color: #777; }
     @media screen and (max-width: 650px)  {
-      section aside {
+      section aside, section .date, section header {
         float: left;
         display: block;
         margin-right: 7.42297%;
         width: 100%; }
-        section aside:last-child {
+        section aside:last-child, section .date:last-child, section header:last-child {
           margin-right: 0; } }
   section article {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-left: 17.05961%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
     font-size: 1.2em;
     padding-top: 5%; }
     section article:last-child {
@@ -312,6 +316,16 @@ section {
         margin-left: 0%; }
         section article:last-child {
           margin-right: 0; } }
+    section article .thumbnail {
+      height: auto;
+      position: relative;
+      overflow: hidden;
+      background-color: #43A45E; }
+      section article .thumbnail img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: -20% auto; }
     section article .summary {
       text-align: justify; }
     section article .more {

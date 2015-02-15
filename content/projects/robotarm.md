@@ -2,6 +2,8 @@
 date = "2015-02-15T12:21:27Z"
 weight = 1
 title = "Object Detection for an Eye-Tracking Robotic Arm"
+categories = ["projects"]
+tags = ["kinect", "object detection", "university project"]
 thumbnail = "/img/robotarm.png"
 +++
 

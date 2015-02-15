@@ -2,6 +2,8 @@
 date = "2015-02-15T12:21:21Z"
 weight = 1
 title = "Autonomous Control & 3D Vision of a RC Helicopter"
+categories = ["projects"]
+tags = ["kinect", "object detection", "rc helicopter", "infra red", "university project"]
 thumbnail = "/img/helicopter.png"
 +++
 

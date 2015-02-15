@@ -2,9 +2,9 @@
 date = "2013-09-15T12:00:00Z"
 draft = false
 title = "Decoding Audio with FFMpeg"
-categories = ["programming"]
+categories = ["audio", "projects"]
 tags = ["ffmpeg", "audio", "decoding"]
-importance = 4
+weight = 4
 
 +++
 

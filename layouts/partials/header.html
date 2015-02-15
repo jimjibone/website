@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A site for James Reuss and his things.">
+
+    <base href="{{ .Site.BaseUrl }}">
+    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+    <div class="heading">
+
+        {{ if isset .Site.Params "gravatarid" }}
+        <div class="avatar">
+            <img src="http://gravatar.com/avatar/{{ .Site.Params.gravatarid }}?s=300" class="face"/>
+        </div>
+        {{ end }}
+
+        <div class="title">
+            <h1><a href="{{ .Site.BaseUrl }}">{{ .Site.Title }}</a></h1>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="list">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <a href="/categories/{{ $name | urlize }}">{{ $name }}</a>
+        {{ end }}
+        </div>
+    </div>

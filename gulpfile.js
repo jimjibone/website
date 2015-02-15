@@ -1,10 +1,13 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    neat = require('node-neat').includePaths;
+    neat = require('node-neat').includePaths,
+    imagemin = require('gulp-imagemin');
 
 var paths = {
     scss: './sass/*.scss',
-    css: './static/css'
+    css: './static/css',
+    images: './images/*.*',
+    img: './static/img'
 };
 
 gulp.task('styles', function () {
@@ -15,10 +18,17 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(paths.css));
 });
 
-gulp.task('default',function(){
-    gulp.start('styles');
+gulp.task('images', function () {
+    return gulp.src(paths.images)
+        .pipe(imagemin({}))
+        .pipe(gulp.dest(paths.img));
 });
 
-gulp.task('watch', ['styles'], function() {
+gulp.task('default',function(){
+    gulp.start('styles', 'images');
+});
+
+gulp.task('watch', ['styles', 'images'], function() {
     gulp.watch(paths.scss, ['styles']);
+    gulp.watch(paths.images, ['images']);
 });

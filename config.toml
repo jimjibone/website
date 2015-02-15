@@ -1,3 +1,13 @@
 baseurl = "http://jamesreuss.co.uk"
 languageCode = "en-gb"
 title = "James Reuss"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  githubuser = "jimjibone"
+  email = "jamesreuss@gmail.com"
+  googleplusid = "108633255800920418502"
+  gravatarid = "fc7ff16f17838730263a8734767ee857"

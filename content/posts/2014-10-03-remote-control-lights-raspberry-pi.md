@@ -1,9 +1,9 @@
 +++
 date = "2014-10-03T21:45:13Z"
 title = "Remote Control Lights using a Raspberry Pi"
-categories = ["home automation"]
+categories = ["home automation","projects"]
 tags = ["raspberry pi", "lightwave rf", "lighting", "home automation"]
-importance = 4
+weight = 4
 thumbnail = "http://img.youtube.com/vi/UApxWZYKNRU/0.jpg"
 
 +++

@@ -4,7 +4,7 @@ draft = false
 title = "Moving to Jekyll"
 categories = ["website"]
 tags = ["jekyll"]
-importance = 3
+weight = 3
 
 +++
 

@@ -22,6 +22,7 @@
   "homepage": "jamesreuss.co.uk",
   "devDependencies": {
     "gulp": "^3.8.10",
+    "gulp-imagemin": "^2.2.0",
     "gulp-sass": "^1.3.2",
     "node-bourbon": "^1.2.3",
     "node-neat": "^1.4.2"

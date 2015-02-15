@@ -1,46 +1,35 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A site for James Reuss and his things.">
+{{ partial "header.html" . }}
 
-    <base href="{{ .Site.BaseUrl }}">
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
-<body>
-
-    <div class="heading">
-        <div class="title">
-            <h1><a href="{{ .Site.BaseUrl }}">{{ .Site.Title }}</a></h1>
-        </div>
-    </div>
-
-    {{ range .Data.Pages }}
-    <section>
-        <div class="date">
-            <p>{{ .Date.Format "January 02, 2006" }}</p>
-        </div>
+{{ range .Data.Pages.ByDate.Reverse }}
+<section>
+    <div class="post">
         <header>
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        </header>
-        <aside>
-            {{ if isset .Params "categories" }}
-            <p>
-                under
-                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
-            </p>
+            {{ if eq ( .Date.Format "January 02, 2006" ) "January 01, 0001" }}
+            {{ else }}
+            <div class="date">
+                <p>{{ .Date.Format "January 02, 2006" }}</p>
+            </div>
             {{ end }}
-        </aside>
+
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+            {{ if isset .Params "categories" }}
+            <div class="categories">
+                <p>under: </p>
+                <ul>
+
+                    {{ range .Params.categories }}
+                    <li><a class="post-category post-category-{{ . }}" href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </header>
 
         <article>
             {{ if isset .Params "thumbnail" }}
             <div class="thumbnail">
-                <img src="{{ .Params.thumbnail }}">
+                <div class="thumb-img" style="background-image: url({{ .Params.thumbnail }});"></div>
             </div>
             {{ end }}
             <div class="summary">
@@ -50,15 +39,8 @@
                 {{ end }}
             </div>
         </article>
-    </section>
-    {{ end }} <!-- end range .Data.Pages -->
+    </div><!-- end div .post -->
+</section>
+{{ end }}<!-- end range .Data.Pages -->
 
-    <footer>
-        <div class="about">
-            <p>I am a software engineer living in the UK with a Masters of Engineering Degree from The University of Leicester.</p>
-            <p>I program in many flavours, but mostly in C and C++. You will occasionally find me using HTML, CSS and JavaScript, for things just like this site! But a recent favourite is Golang.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{{ partial "footer.html" . }}

@@ -1,10 +1,10 @@
 +++
-date = "2015-02-15T12:21:27Z"
-weight = 1
+date = "2013-07-01T12:21:27Z"
 title = "Object Detection for an Eye-Tracking Robotic Arm"
-categories = ["projects"]
-tags = ["kinect", "object detection", "university project"]
-thumbnail = "/img/robotarm.png"
+description = "Detecting objects on a table so that a robotic arm can pick them up for my 4th Year Engineering project."
+tags = ["robot arm", "kinect", "object detection"]
+categories = ["projects", "university"]
+
 +++
 
 For my 4th year engineering project at university, I worked with a group of engineers to create a semi-autonomous robotic arm system which accepted user input via an eye-tracker.

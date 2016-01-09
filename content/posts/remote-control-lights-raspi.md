@@ -1,16 +1,13 @@
 +++
 date = "2014-10-03T21:45:13Z"
 title = "Remote Control Lights using a Raspberry Pi"
-categories = ["home automation","projects"]
-tags = ["raspberry pi", "lightwave rf", "lighting", "home automation"]
-weight = 4
-thumbnail = "http://img.youtube.com/vi/UApxWZYKNRU/0.jpg"
+description = "I had a LightwaveRF dimmer switch, but I didn't want to have to use the remote."
+tags = ["lighting", "raspberry pi"]
+categories = ["projects", "home automation"]
 
 +++
 
 I got fed up with using my Arduino to interface with hardware. It's really easy to use and wire things up, but actually transferring data between it and a PC (and possibly a server of some sort) is pretty painful. It usually requires using serial communications and some data serialisation method. So I thought I'd use a Raspberry Pi for a change!
-
-
 
 I already had a 433 MHz transmitter/receiver pair working with the Arduino. I was trying out both the [lawrie/LightwaveRF][lawrie] and [roberttidey/LightwaveRF][roberttidey] libraries to get my ceiling light and wall plug lights switching on and off remotely and it was awesome. But again, the Arduino brought pain when interfacing with a server.
 

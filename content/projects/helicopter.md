@@ -1,10 +1,10 @@
 +++
-date = "2015-02-15T12:21:21Z"
-weight = 1
+date = "2012-07-01T12:21:21Z"
 title = "Autonomous Control & 3D Vision of a RC Helicopter"
-categories = ["projects"]
-tags = ["kinect", "object detection", "rc helicopter", "infra red", "university project"]
-thumbnail = "/img/helicopter.png"
+description = "Let the computer play with the Helicopter while I drink coffee."
+tags = ["helicopter", "kinect", "object detection"]
+categories = ["projects", "university"]
+
 +++
 
 For my 3rd year engineering project at university, I developed a system using my Mac, an Arduino and a Kinect which could autonomously fly a small RC helicopter around a room.

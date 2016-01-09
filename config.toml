@@ -1,13 +1,11 @@
-baseurl = "http://jamesreuss.co.uk"
-languageCode = "en-gb"
+baseurl = "http://jamesreuss.co.uk/"
+languageCode = "en-us"
 title = "James Reuss"
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
+theme = "timeline"
+canonifyurls = true
 
 [params]
-  githubuser = "jimjibone"
-  email = "jamesreuss@gmail.com"
-  googleplusid = "108633255800920418502"
-  gravatarid = "fc7ff16f17838730263a8734767ee857"
+  author = "James Reuss"
+  description = "Wouldn't it be great to talk to your house?"
+  disqusShortname = "jimjibone"
+  googleAnalytics = "UA-36805184-1"

@@ -7,5 +7,5 @@ canonifyurls = true
 [params]
   author = "James Reuss"
   description = "Wouldn't it be great to talk to your house?"
-  disqusShortname = "jimjibone"
+  disqusShortname = "jamesreuss"
   googleAnalytics = "UA-36805184-1"

@@ -1,5 +1,5 @@
 baseurl = "http://jamesreuss.co.uk/"
-languageCode = "en-us"
+languageCode = "en-gb"
 title = "James Reuss"
 theme = "timeline"
 canonifyurls = true

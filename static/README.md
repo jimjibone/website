@@ -1,8 +1,5 @@
-jimjibone.github.com
-====================
+jimjibone.github.com > [jamesreuss.co.uk](http://jamesreuss.co.uk)
+==================================================================
 
-My personal website, built using [Hugo](gohugo.io) and hosted by Github.
+This repository contains the generated and published version of my site. The source can be found in my [website](https://github.com/jimjibone/website) repository.
 
-[jamesreuss.co.uk](jamesreuss.co.uk)
-
-This repository now only contains the generated site. The source code can be found in the [website](github.com/jimjibone/website) repository.

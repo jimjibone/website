@@ -4,9 +4,8 @@ set -e
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 # Check that the public submodule is up to date, etc.
-git submodule update --init public
 cd public
-git checkout -B master
+git pull -f origin
 cd ..
 
 # Build the project.

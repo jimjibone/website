@@ -1,25 +1,20 @@
 #!/bin/bash
 # For help see: http://gohugo.io/tutorials/github-pages-blog/
-
+set -e
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+
+# Check that the public submodule is up to date, etc.
+git submodule update --init public
+cd public
+git checkout -B master
+cd ..
 
 # Build the project.
 hugo
 
-# Go To Public folder
+# Publish.
 cd public
-# Add changes to git.
 git add -A
-
-# Commit changes.
-msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
-fi
-git commit -m "$msg"
-
-# Push source and build repos.
+git commit -m "rebuilding site `date`"
 git push origin master
-
-# Come Back
 cd ..

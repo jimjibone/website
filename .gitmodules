@@ -1,6 +1,3 @@
-[submodule "public"]
-	path = public
-	url = git@github.com:jimjibone/jimjibone.github.com.git
 [submodule "themes/timeline"]
 	path = themes/timeline
 	url = https://github.com/jimjibone/website-timeline.git

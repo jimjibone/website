@@ -13,6 +13,6 @@ My task in this project was to develop the object detection system to help guide
 
 ![Successfully detected an orange and mug on a table](/img/robotarm.png)
 
-[View the presentation](http://jamesreuss.co.uk/robotarm)
+[View the presentation](https://robotarm.jamesreuss.co.uk)
 
 [View my code on GitHub](https://github.com/jimjibone/robotarm)

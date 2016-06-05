@@ -1,12 +1,15 @@
-.PHONY: all html dev-html dev-theme dev
-
-html:
-	hugo
-
-theme: themes/timeline/source/css/main.scss
-	cd themes/timeline && npm run build
+.PHONY: theme html deps dev-html dev-theme dev
 
 all: theme html
+
+theme:
+	cd themes/timeline && npm run build
+
+html:
+	hugo --baseURL=https://jamesreuss.co.uk/ --destination="public"
+
+deps:
+	cd themes/timeline && npm install
 
 dev-html:
 	hugo server

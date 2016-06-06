@@ -141,26 +141,13 @@ hr {
 .post-header, .post-footer {
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 0.2em;
     font-size: 80%;
 }
 
 .post-footer {
-    .post-author {
-        text-align: left;
-        float: left;
-    }
-    .post-time {
-        text-align: right;
-        float: right;
-    }
-    .post-share {
-        text-align: left;
-        float: left;
-    }
-    .post-tags, .post-categories {
-        text-align: right;
-        float: right;
+    .post-meta, .post-share {
+        padding-top: 1em;
     }
 }
 

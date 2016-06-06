@@ -10,14 +10,19 @@
 
     <footer class="post-footer">
 		<section class="post-meta">
-			{{ with.Params.tags }}
-				&nbsp;&nbsp;<i class="fa fa-tag"></i>
-				{{ delimit . ", " }}
-			{{ end }}
-			{{ with.Params.categories }}
-				&nbsp;&nbsp;<i class="fa fa-folder-open"></i>
-				{{ delimit . ", " }}
-			{{ end }}
+			{{ $baseurl := .Site.BaseURL }}
+			<span class="post-footer-info">
+	            <i class="fa fa-tag"></i>
+	            {{ range $index, $elem := .Params.tags -}}
+	                {{if $index}}, {{end}}<a href="{{ $baseurl }}tags/{{ $elem | urlize }}">{{ . }}</a>
+	            {{- end }}
+	        </span>
+	        <span class="post-footer-info">
+	            <i class="fa fa-folder-open"></i>
+	            {{ range $index, $elem := .Params.categories -}}
+	                {{if $index}}, {{end}}<a href="{{ $baseurl }}categories/{{ $elem | urlize }}">{{ . }}</a>
+	            {{- end }}
+	        </span>
 		</section>
 
 		<section class="post-share">

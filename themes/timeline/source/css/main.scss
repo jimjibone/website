@@ -129,6 +129,15 @@ hr {
     h2 {margin: 0;}
 }
 
+.taxonomy-header {
+    h1 { font-size: 2.0em; }
+    margin-bottom: 9em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 80%;
+}
+
 .post-header, .post-content {
     h1 { font-size: 2.0em; }
     h2 { font-size: 1.5em; }
@@ -146,6 +155,9 @@ hr {
 }
 
 .post-footer {
+    .post-footer-info {
+        padding: 0 1em;
+    }
     .post-meta, .post-share {
         padding-top: 1em;
     }

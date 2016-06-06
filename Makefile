@@ -17,5 +17,5 @@ dev-html:
 dev-theme:
 	cd themes/timeline && npm start
 
-# use dev with -j 2
+# use dev with `-j 2`
 dev: dev-theme dev-html

@@ -1,27 +1,36 @@
 # website
 
-The source for my website hosted at [jamesreuss.co.uk](http://jamesreuss.co.uk)
+This is the source for [jamesreuss.co.uk](http://jamesreuss.co.uk).
 
-## What is this?
+It is a static site built using [Hugo](http://gohugo.io) and [Gulp](http://gulpjs.com/) for [Sass](http://sass-lang.com/) compilation.
 
-My website is now split into two parts; the source which is found in this repo, and the published site which is found in [jimjibone/jimjibone.github.com](https://github.com/jimjibone/jimjibone.github.com).
+For most post editing and development activities see the Hugo documentation. Also, it might be handy to look at the Sass documentation.
 
-To help generate the completed site I make use of [Hugo](http://gohugo.io).
+Most of the development and deployment process is taken care of in the Makefile.
 
-Hugo compiles all of my posts and other pages found in the `content` directory using the theme found in the `themes/timeline` directory.
+## Dependencies
 
-## Deploying
+- [Hugo](http://gohugo.io)
+- [Node.js & npm](http://nodejs.org)
+- Install theme dependencies with `make deps`
 
-To deploy new styles/formats or publish new posts to the served website, run the `deploy.sh` script. Make sure that you run it in the root directory of the repository.
+## Deployment
 
-`deploy.sh` uses Hugo to generate the site in the `public` submodule directory. This submodule actually points to the [jimjibone/jimjibone.github.com](https://github.com/jimjibone/jimjibone.github.com) repo which GitHub helpfully hosts for me.
+Just run `make`.
 
 ## Development
 
-Setting up for development is easy. First, make sure you have [Hugo](http://gohugo.io) installed.
-
-Then run the following command to generate and serve the website.
+You have two options. You can either run the Hugo server and Gulp watcher manually in two terminals:
 
 ```
-hugo server
+# terminal 1
+make dev-html
+# terminal 2
+make dev-theme
+```
+
+Or utilise `make`'s parallel execution mode by running:
+
+```
+make -j 2 dev
 ```

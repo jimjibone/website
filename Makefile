@@ -12,7 +12,7 @@ deps:
 	cd themes/timeline && npm install
 
 dev-html:
-	hugo server
+	hugo server -w
 
 dev-theme:
 	cd themes/timeline && npm start

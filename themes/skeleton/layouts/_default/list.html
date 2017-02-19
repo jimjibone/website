@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+{{ partial "header.html" . }}
+
+<div class="container">
+	{{ $baseurl := .Site.BaseURL }}
+	{{ range .Paginator.Pages }}
+	<article class="row list-article {{ .Type }}">
+		<header>
+			<h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+		</header>
+
+		<section>
+			<p>{{ .Summary }}</p>
+		</section>
+
+		<footer>
+			<p><i class="fa fa-calendar"></i> <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+			<p><i class="fa fa-tag"></i> {{ range $index, $elem := .Params.tags -}}
+				{{if $index}}, {{end}}<a href="{{ $baseurl }}tags/{{ $elem | urlize }}">{{ . }}</a>
+			{{- end }}</p>
+			<p><i class="fa fa-folder-open"></i> {{ range $index, $elem := .Params.categories -}}
+				{{if $index}}, {{end}}<a href="{{ $baseurl }}categories/{{ $elem | urlize }}">{{ . }}</a>
+			{{- end }}</p>
+		</footer>
+	</article>
+	{{ end }}
+	{{ partial "pagination.html" . }}
+</div>
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
+{{ partial "googleanalytics.html" . }}
+</body>
+</html>

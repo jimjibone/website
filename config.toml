@@ -1,7 +1,7 @@
 baseurl = "http://jamesreuss.co.uk/"
 languageCode = "en-gb"
 title = "James Reuss"
-theme = "timeline"
+theme = "skeleton"
 
 [params]
   author = "James Reuss"

@@ -1,0 +1,49 @@
+<head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>{{if not .IsHome}}{{ .Title }} &middot; {{end}}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ if .IsNode }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ else }}{{ with .Description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <link rel="canonical" href="{{ .Site.BaseURL }}" />
+    {{ if .RSSlink -}}
+    <link rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSlink }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSlink }}" />
+    {{- end }}
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600|Montserrat:400,700"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/atom-one-light.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
+    <!-- Additional Meta
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    {{ if .IsPage -}}
+    <meta property="og:type" content="article" />
+    <meta property="og:article:author" content="{{ .Site.Params.author }}" />
+    <meta property="og:article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}" />
+    {{- else -}}
+    <meta property="og:type" content="website" />
+    {{- end }}
+
+    {{ .Hugo.Generator }}
+</head>
